@@ -1,0 +1,105 @@
+"""
+continuing learning by practice, 
+I followed an example video 
+https://www.youtube.com/watch?v=8ext9G7xspg&t=1274s
+
+plus a Big Bang theory modification
+
+thanks CodeInPlace!!!
+"""
+
+#importing the random library
+
+import random
+
+
+def main():
+    # defining the question/description
+    human = input("please choose wisely: 'r' for rock, 'p' for paper, 's' for scissors, 'l' for lizard and 'sp' for spock:")
+    #defining the random library with 3 options
+    machine = random.choice(['r', 'p', 's', 'l', 'sp'])
+
+    #TIE scenery
+    if human == machine:
+        print ('It\'s tie')
+        
+    #WIN scenery
+    if win(human, machine):
+        print ('you won! yeah!!!')
+        
+    #SORRY - lost scenery
+    if sorry(human, machine):
+        print ('sorry')
+        
+
+#internal calculations
+
+def win(human,machine):
+
+#        return win when...
+    if (human == 'r' and machine == 's'):
+        return win
+
+    if (human == 's' and machine == 'p'):
+        return win
+
+    if (human == 'p' and machine == 'r'):
+        return win
+
+    if (human == 'r' and machine == 'l'):
+        return win
+
+    if (human == 'l' and machine == 'sp'):
+        return win
+
+    if (human == 'sp' and machine == 's'):
+        return win
+
+    if (human == 's' and machine == 'l'):
+        return win
+
+    if (human == 'l' and machine == 'p'):
+        return win
+
+    if (human == 'p' and machine == 'sp'):
+        return win
+
+    if (human == 'sp' and machine == 'r'):
+        return win
+
+#        return sorry when...
+def sorry(human,machine):
+
+    if (human == 's' and machine == 'r'):
+        return sorry
+
+    if (human == 'p' and machine == 's'):
+        return sorry
+
+    if (human == 'r' and machine == 'p'):
+        return sorry
+
+    if (human == 'l' and machine == 'r'):
+        return sorry
+
+    if (human == 'sp' and machine == 'l'):
+        return sorry
+
+    if (human == 's' and machine == 'sp'):
+        return sorry
+
+    if (human == 'l' and machine == 's'):
+        return sorry
+
+    if (human == 'p' and machine == 'l'):
+        return sorry
+
+    if (human == 'sp' and machine == 'p'):
+        return sorry
+
+    if (human == 'r' and machine == 'sp'):
+        return sorry
+
+
+if __name__ == '__main__':
+    main()
